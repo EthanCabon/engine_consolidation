@@ -1,0 +1,53 @@
+Problem Type:
+  Name: "Printing3D"
+  Type: Heat transfer
+  Dimension: 1
+  Number of Materials: 1
+
+Material1:
+  Mechanical:
+    Coefficient of Thermal Expansion: 0.000041
+    Density [kg.m-3]: 1050
+  Thermal:
+    Convection Coefficient [W.m-2.K-1]: 30
+    Thermal Conductivity [W.m-1.K-1]:
+      x: 0.2
+      y: 0.2
+      z: 0.2
+    Specific Heat [J.kg-1.K-1]: 2100
+  Thermal Resistance Filament-Plate [m2.K.W-1]: 0.00005
+  Thermal Resistance Filament-Filament [m2.K.W-1]: 0.0001
+
+Heating plate:
+  Density [kg.m-3]: 2210
+  Specific Heat [J.kg-1.K-1]: 730
+  Thermal Conductivity [W.m-1.K-1]: 1.4
+
+Dimensions:
+  Number of filaments:
+    Height: 3
+    Width: 1
+    Length: 1
+  Filament:
+    Thickness [m]: 0.0008
+    Width [m]: 0.00125
+    Length [m]: 0.01
+  
+Experimental Conditions:
+  Extrusion Temperature [K]: 528
+  Bed Temperature [K]: 373
+  Room Temperature [K]: 368
+  Time between 2 filament depositions [s]: 8.9
+  Vcooling [K.s-1]: 0.5
+  Time before cooling [s]: 60
+  Time after cooling [s]: 60
+
+Simulation:
+  Number of intervals per filament:
+    Thickness: 4
+    Width: 6
+    Length: 50
+  
+Animation:
+  Color Map: 'plasma'
+  Time Interval: 5
