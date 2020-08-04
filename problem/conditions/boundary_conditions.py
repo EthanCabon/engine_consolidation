@@ -48,24 +48,5 @@ class Boundary_Conditions:
         self.Uextend[position["xstart"]+v[0]:position["xend"]+v[0],position["ystart"]+v[1]:position["yend"]+v[1],position["zstart"]+v[2]:position["zend"]+v[2]] = \
             self.Uextend[position["xstart"]-v[0]:position["xend"]-v[0],position["ystart"]-v[1]:position["yend"]-v[1],position["zstart"]-v[2]:position["zend"]-v[2]]-2*dx*value
         # the values of the neumann conditions are added to Uextend
-                
-    def boundary_layers(self,deck,T):
-        
-        self.Tbed = float(self.deck.doc["Experimental Conditions"]["Bed Temperature"])
-        
-        if len(T.shape) == 1:
-            
-            T[0] = self.Tbed
-                       
-        elif len(T.shape) == 2:
-            
-            T[1:-1, 1:-1] = T[1:-1, 1:-1] + Dx * self.dt * ((T[2:, 1:-1] - 2*T[1:-1, 1:-1] + T[:-2, 1:-1]) / self.dx**2) + Dy * self.dt * ((T[1:-1, 2:] - 2*T[1:-1, 1:-1] + T[1:-1, :-2]) / self.dy**2) + Q[1:-1,1:-1] * self.dt / (self.rho*self.Cp)
-            
-        elif len(T.shape) == 3:
-            
-            T[1:-1, 1:-1, 1:-1] = T[1:-1, 1:-1, 1:-1] + Dx * self.dt * ((T[2:, 1:-1, 1:-1] - 2*T[1:-1, 1:-1, 1:-1] + T[:-2, 1:-1, 1:-1]) / self.dx**2) + Dy * self.dt * ((T[1:-1, 2:, 1:-1] - 2*T[1:-1, 1:-1, 1:-1] + T[1:-1, :-2, 1:-1]) / self.dy**2) + Dz * self.dt * ((T[1:-1, 1:-1, 2:] - 2*T[1:-1, 1:-1, 1:-1] + T[1:-1, 1:-1, :-2]) / self.dz**2) + Q[1:-1,1:-1,1:-1] * self.dt / (self.rho*self.Cp) 
-            
-        else:
-            
-            return ('Wrong dimension')
-            
+
+
