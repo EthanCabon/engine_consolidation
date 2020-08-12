@@ -37,16 +37,17 @@ Experimental Conditions:
   Extrusion Temperature [K]: 528
   Bed Temperature [K]: 373
   Room Temperature [K]: 368
-  Time between 2 filament depositions [s]: 8.9
+  Time between 2 filament depositions [s]: 2
   Vcooling [K.s-1]: 0.5
-  Time before cooling [s]: 60
-  Time after cooling [s]: 60
+  Time before cooling [s]: 20
+  Time after cooling [s]: 20
 
 Simulation:
   Number of intervals per filament:
-    Thickness: 4
+    Thickness: 3
     Width: 6
     Length: 50
+  Time step [s]: 0.1
   
 Animation:
   Color Map: 'plasma'
