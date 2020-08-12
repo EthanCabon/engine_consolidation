@@ -3,3 +3,4 @@ from .geometry import *
 from .mesh import *
 from .conditions import *
 from .model import *
+from .solve import *
